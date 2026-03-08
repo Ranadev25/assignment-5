@@ -27,6 +27,8 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body class="max-w-[1600px] mx-auto">
+
+    <!-- navigation menu  -->
     <header>
       <nav class="md:shadow-sm">
         <div class="px-3 sm:px-10 py-4 md:flex justify-between items-center">
@@ -58,7 +60,10 @@
       </nav>
     </header>
 
+    <!-- main content -->
     <main class="bg-[#F8FAFC] px-3 sm:px-5 lg:px-10 xl:px-20 py-10">
+
+      <!-- card button  -->
       <section
         class="flex justify-between items-center bg-[#FFF] px-3 py-3 rounded-md shadow-sm"
       >
@@ -84,6 +89,7 @@
         </div>
       </section>
 
+      <!-- show total issues  -->
       <section>
         <div
           class="flex justify-between items-center bg-[#FFF] px-3 py-3 rounded-tl-sm rounded-tr-sm shadow-sm mt-3"
@@ -115,12 +121,6 @@
         </div>
       </section>
 
-      <section class="p-5">
-        <div id="loading" class="flex justify-center items-center hidden">
-          <span class="loading loading-spinner text-primary"></span>
-        </div>
-      </section>
-
       <section>
         <div
           class="grid md:grid-cols-2 lg:grid-cols-3 gap-5 shadow-sm bg-[#eee] p-5"
@@ -148,50 +148,12 @@
         </dialog>
       </section>
 
-      <!-- <div class="bg-white shadow-sm p-5">
-        <div>
-          <h1 class="font-semibold text-xl">Fix broken image uploads</h1>
-
-          <div>
-            <p class="my-3 text-[#64748B]">
-              <span class="text-white bg-primary rounded-full px-2 py-0.5">Opened</span>
-              +
-              <span>Opened by Fahim Ahmed </span>
-              <span> + </span>
-              22/02/2026
-            </p>
-          </div>
-
-          <div class="my-7">
-            <div class="flex gap-5">
-              <div
-                class="flex gap-1 justify-start items-center border px-1 rounded-full text-red-500 bg-red-50"
-              >
-                <i class="w-4 fa-solid fa-bug"></i>
-                <h1 class="text-sm">${item.labels[0]}</h1>
-              </div>
-              <div
-                class="flex gap-1 justify-start items-center text-yellow-400 border px-1 rounded-full bg-red-50"
-              >
-                <i class="w-4 fa-solid fa-life-ring"></i>
-                <h1 class="text-sm">${item.labels[1] ? item.labels[1] : ""}</h1>
-              </div>
-            </div>
-          </div>
-          <p class="text-sm text-[#64748B]">The navigation menu doesn't collapse properly on mobile devices. Need to fix the responsive behavior.</p>
-
-          <div class="bg-blue-50 rounded-md p-3 flex  gap-[40%] mt-5">
-            <div>
-              <p class="text-[#64748B]">Assignee:</p>
-              <h1 class="font-semibold">Fahim Ahmed</h1>
-            </div>
-            <div>
-              <p class="text-[#64748B]">Priority:</p>
-              <p class="bg-red-400 text-center rounded-full mt-1">HIGH</p>
-            </div>
-          </div>
+       <section class="p-5">
+        <div id="loading" class="flex justify-center items-center hidden">
+          <span class="loading loading-spinner text-primary"></span>
         </div>
-      </div> -->
+      </section>
+      
     </main>
 
     <script src="issue.js"></script>
