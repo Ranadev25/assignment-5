@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@5"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body class="max-w-[1600px] mx-auto">
+    <header>
+      <nav class="md:shadow-sm">
+        <div class="px-3 sm:px-10 py-4 md:flex justify-between items-center">
+          <div
+            id="logo"
+            class="md:w-1/2 flex justify-start items-center mb-4 md:mb-0"
+          >
+            <img class="max-w-10" src="./assets/github-logo.png" alt="" />
+            <h1 class="text-2xl font-semibold">GitHub Issues Tracker</h1>
+          </div>
+          <div class="flex gap-3 justify-start items-center">
+            <label class="input">
+              <i class="fa-solid fa-magnifying-glass"></i>
+              <input
+                id="search"
+                type="search"
+                class=""
+                placeholder="Search issues..."
+              />
+            </label>
+            <button
+              id="searchBtn"
+              class="btn bg-blue-500 hover:bg-blue-600 border-0"
+            >
+              Search
+            </button>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="bg-[#F8FAFC] px-3 sm:px-5 lg:px-10 xl:px-20 py-10">
+      <section
+        class="flex justify-between items-center bg-[#FFF] px-3 py-3 rounded-md shadow-sm"
+      >
+        <div class="flex gap-2 justify-start items-center" id="allbtn">
+          <button
+            value="All"
+            class="px-6 py-1.5 rounded-sm border border-gray-300 hover:bg-slate-200 cursor-pointer active button"
+          >
+            All
+          </button>
+          <button
+            class="px-6 py-1.5 rounded-sm border border-gray-300 hover:bg-slate-200 cursor-pointer button"
+            value="Open"
+          >
+            Open
+          </button>
+          <button
+            value="Closed"
+            class="px-6 py-1.5 rounded-sm border border-gray-300 hover:bg-slate-200 cursor-pointer button"
+          >
+            Closed
+          </button>
+        </div>
+      </section>
+
+      <section>
+        <div
+          class="flex justify-between items-center bg-[#FFF] px-3 py-3 rounded-tl-sm rounded-tr-sm shadow-sm mt-3"
+        >
+          <div class="flex justify-center items-center gap-2">
+            <img
+              class="p-1 bg-blue-50 rounded-full"
+              src="./assets/Aperture.png"
+              alt=""
+            />
+            <div>
+              <h1 class="font-semibold"><span id="total"></span> Issues</h1>
+              <p class="text-sm text-[#64748B]">
+                Track and manage your project issues
+              </p>
+            </div>
+          </div>
+
+          <div class="flex justify-center items-center gap-5">
+            <div class="flex gap-2 items-center">
+              <div class="w-2.5 h-2.5 rounded-full bg-green-300"></div>
+              <p class="text-sm">Open</p>
+            </div>
+            <div class="flex gap-2 items-center">
+              <div class="w-2.5 h-2.5 rounded-full bg-purple-400"></div>
+              <p class="text-sm">Closed</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="p-5">
+        <div id="loading" class="flex justify-center items-center hidden">
+          <span class="loading loading-spinner text-primary"></span>
+        </div>
+      </section>
+
+      <section>
+        <div
+          class="grid md:grid-cols-2 lg:grid-cols-3 gap-5 shadow-sm bg-[#eee] p-5"
+          id="card-content"
+        ></div>
+      </section>
+
+      <section>
+        <dialog id="issue_modal" class="modal modal-bottom sm:modal-middle">
+          <div class="modal-box">
+            <div
+              class=" rounded-md border-blue-50"
+              id="issue-container"
+            ></div>
+            <div class="modal-action ">
+              <form method="dialog">
+                <button
+                  class="btn bg-blue-400 text-white text-sm py-2 px-3 rounded-md"
+                >
+                  Close
+                </button>
+              </form>
+            </div>
+          </div>
+        </dialog>
+      </section>
+
+      <!-- <div class="bg-white shadow-sm p-5">
+        <div>
+          <h1 class="font-semibold text-xl">Fix broken image uploads</h1>
+
+          <div>
+            <p class="my-3 text-[#64748B]">
+              <span class="text-white bg-primary rounded-full px-2 py-0.5">Opened</span>
+              +
+              <span>Opened by Fahim Ahmed </span>
+              <span> + </span>
+              22/02/2026
+            </p>
+          </div>
+
+          <div class="my-7">
+            <div class="flex gap-5">
+              <div
+                class="flex gap-1 justify-start items-center border px-1 rounded-full text-red-500 bg-red-50"
+              >
+                <i class="w-4 fa-solid fa-bug"></i>
+                <h1 class="text-sm">${item.labels[0]}</h1>
+              </div>
+              <div
+                class="flex gap-1 justify-start items-center text-yellow-400 border px-1 rounded-full bg-red-50"
+              >
+                <i class="w-4 fa-solid fa-life-ring"></i>
+                <h1 class="text-sm">${item.labels[1] ? item.labels[1] : ""}</h1>
+              </div>
+            </div>
+          </div>
+          <p class="text-sm text-[#64748B]">The navigation menu doesn't collapse properly on mobile devices. Need to fix the responsive behavior.</p>
+
+          <div class="bg-blue-50 rounded-md p-3 flex  gap-[40%] mt-5">
+            <div>
+              <p class="text-[#64748B]">Assignee:</p>
+              <h1 class="font-semibold">Fahim Ahmed</h1>
+            </div>
+            <div>
+              <p class="text-[#64748B]">Priority:</p>
+              <p class="bg-red-400 text-center rounded-full mt-1">HIGH</p>
+            </div>
+          </div>
+        </div>
+      </div> -->
+    </main>
+
+    <script src="issue.js"></script>
+  </body>
+</html>

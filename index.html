@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@5"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>GitHub issue tracker</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body class="max-w-[1600px] mx-auto">
+    <section
+      id="login"
+      class="flex justify-center items-center min-h-[100vh] my-10"
+    >
+      <div
+        class="shadow-[0_4px_6px_1px_rgba(0,0,0,0.1),0_-4px_6px_-1px_rgba(0,0,0,0.1)] rounded-md p-5 sm:min-w-[500px]"
+      >
+        <img class="mx-auto" src="./assets/github-logo.png" alt="gitHub logo" />
+        <div class="text-center my-7">
+          <h1 class="font-semibold text-[24px]">GitHub Issues Tracker</h1>
+          <p class="text-[16px] text-[#64748B]">
+            Sign in to manage your issues
+          </p>
+        </div>
+        <form action="" id="form">
+          <div class="mb-2">
+            <label for="userName">Username</label>
+            <input
+              type="text"
+              name="name"
+              id="name"
+              class="w-full h-10 px-5 rounded-md"
+              placeholder="Enter Username"
+              required
+            />
+            <p class="text-[#4A00FF] text-sm" id="defaultName">Default: admin</p>
+          </div>
+          <div class="mb-2">
+            <label for="password">Password</label>
+            <input
+              type="password"
+              name="password"
+              id="password"
+              class="w-full h-10 px-5 rounded-md"
+              placeholder="Password"
+              required
+            />
+            <p class="text-[#4A00FF] text-sm" id="defaultPassword">Default: admin123</p>
+          </div>
+          <button
+            type="submit"
+            class="bg-blue-500 w-full p-2 rounded-md my-4 hover:bg-blue-400 cursor-pointer"
+          >
+            Sign In
+          </button>
+        </form>
+        <div class="flex justify-center items-center gap-3">
+          <div class="w-[40%] h-[1px] bg-gray-200"></div>
+          <div>OR</div>
+          <div class="w-[40%] h-[1px] bg-gray-200"></div>
+        </div>
+        <p class="text-sm text-[#64748B] text-center mt-3">Demo Credentials:</p>
+        <div class="bg-blue-50 text-center p-5 mt-2">
+          <p class="text-sm"><span class="font-semibold">Username:</span> admin</p>
+          <p class="text-sm"><span class="font-semibold">Password:</span> admin123</p>
+        </div>
+      </div>
+    </section>
+
+    <script src="script.js"></script>
+  </body>
+</html>
