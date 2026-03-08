@@ -29,7 +29,7 @@ searchBtn.addEventListener("click", () => {
     btns.classList.remove("active");
   });
   handelRenderData(searchingData);
-  // total.innerHTML = searchData.length;
+  total.innerHTML = searchData.length;
 });
 
 const allDataFetching = async () => {
