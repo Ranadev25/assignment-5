@@ -27,6 +27,7 @@
 
 - **For login input**
 Username: admin
+
 Password: admin123
 
 
@@ -34,9 +35,14 @@ Password: admin123
 ## 📤  Submit link
 
 - **Assignment-5 GitHub Repository Link:**
-- **Assignment-5 Live Site Link:**
-- **Linkedin Live Site Link:**
+   https://github.com/Ranadev25/assignment-5
 
+- **Assignment-5 Live Site Link:**
+   https://issuestracke.netlify.app/
+
+
+- **Linkedin Live Site Link:**
+    https://www.linkedin.com/in/rana-khan-dev
 ---
 
 
